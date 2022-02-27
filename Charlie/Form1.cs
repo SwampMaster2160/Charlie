@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace Charlie
 {
-    public partial class Form1 : Form
+    public partial class VisitorRegistrationWindow : Form
     {
-        public Form1()
+        public VisitorRegistrationWindow()
         {
             InitializeComponent();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
