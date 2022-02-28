@@ -1,6 +1,6 @@
 ﻿namespace Charlie
 {
-    partial class VisitorRegistrationWindow
+    partial class VisitorRegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.visitorsOnSiteGroupBox = new System.Windows.Forms.GroupBox();
+            this.visitorsOnSiteListBox = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.signInButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,17 +45,16 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.meetingDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.meetingAimButton = new System.Windows.Forms.Button();
+            this.meetingWithComboBox = new System.Windows.Forms.ComboBox();
+            this.timeMinuteNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.timeColon = new System.Windows.Forms.Label();
+            this.timeHourNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.meetingAimLabel = new System.Windows.Forms.Label();
             this.meetingWithLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.timeHourNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.timeColon = new System.Windows.Forms.Label();
-            this.timeMinuteNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.meetingWithComboBox = new System.Windows.Forms.ComboBox();
-            this.meetingAimButton = new System.Windows.Forms.Button();
-            this.visitorsOnSiteListBox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.visitorsOnSiteGroupBox.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,8 +62,8 @@
             this.visitorDetailsGroupBox.SuspendLayout();
             this.panel4.SuspendLayout();
             this.meetingDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeMinuteNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,16 @@
             this.visitorsOnSiteGroupBox.TabStop = false;
             this.visitorsOnSiteGroupBox.Text = "Visitors On-Site";
             // 
+            // visitorsOnSiteListBox
+            // 
+            this.visitorsOnSiteListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visitorsOnSiteListBox.FormattingEnabled = true;
+            this.visitorsOnSiteListBox.ItemHeight = 25;
+            this.visitorsOnSiteListBox.Location = new System.Drawing.Point(3, 27);
+            this.visitorsOnSiteListBox.Name = "visitorsOnSiteListBox";
+            this.visitorsOnSiteListBox.Size = new System.Drawing.Size(450, 544);
+            this.visitorsOnSiteListBox.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.signInButton);
@@ -107,6 +117,7 @@
             this.signInButton.TabIndex = 0;
             this.signInButton.Text = "Sign In";
             this.signInButton.UseVisualStyleBackColor = true;
+            this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
             // 
             // panel3
             // 
@@ -232,6 +243,61 @@
             this.meetingDetailsGroupBox.TabStop = false;
             this.meetingDetailsGroupBox.Text = "Meeting Details";
             // 
+            // meetingAimButton
+            // 
+            this.meetingAimButton.Location = new System.Drawing.Point(6, 378);
+            this.meetingAimButton.Name = "meetingAimButton";
+            this.meetingAimButton.Size = new System.Drawing.Size(400, 77);
+            this.meetingAimButton.TabIndex = 11;
+            this.meetingAimButton.Text = "Meeting Aim";
+            this.meetingAimButton.UseVisualStyleBackColor = true;
+            this.meetingAimButton.Click += new System.EventHandler(this.meetingAimButton_Click);
+            // 
+            // meetingWithComboBox
+            // 
+            this.meetingWithComboBox.FormattingEnabled = true;
+            this.meetingWithComboBox.Items.AddRange(new object[] {
+            "Bob Jones",
+            "James Wattson",
+            "Bob Bobson"});
+            this.meetingWithComboBox.Location = new System.Drawing.Point(6, 278);
+            this.meetingWithComboBox.Name = "meetingWithComboBox";
+            this.meetingWithComboBox.Size = new System.Drawing.Size(400, 33);
+            this.meetingWithComboBox.TabIndex = 10;
+            // 
+            // timeMinuteNumericUpDown
+            // 
+            this.timeMinuteNumericUpDown.Location = new System.Drawing.Point(180, 178);
+            this.timeMinuteNumericUpDown.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.timeMinuteNumericUpDown.Name = "timeMinuteNumericUpDown";
+            this.timeMinuteNumericUpDown.Size = new System.Drawing.Size(150, 31);
+            this.timeMinuteNumericUpDown.TabIndex = 9;
+            // 
+            // timeColon
+            // 
+            this.timeColon.AutoSize = true;
+            this.timeColon.Location = new System.Drawing.Point(160, 181);
+            this.timeColon.Name = "timeColon";
+            this.timeColon.Size = new System.Drawing.Size(18, 25);
+            this.timeColon.TabIndex = 8;
+            this.timeColon.Text = ":";
+            // 
+            // timeHourNumericUpDown
+            // 
+            this.timeHourNumericUpDown.Location = new System.Drawing.Point(6, 178);
+            this.timeHourNumericUpDown.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.timeHourNumericUpDown.Name = "timeHourNumericUpDown";
+            this.timeHourNumericUpDown.Size = new System.Drawing.Size(150, 31);
+            this.timeHourNumericUpDown.TabIndex = 7;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(6, 78);
@@ -275,67 +341,7 @@
             this.dateLabel.TabIndex = 2;
             this.dateLabel.Text = "Date";
             // 
-            // timeHourNumericUpDown
-            // 
-            this.timeHourNumericUpDown.Location = new System.Drawing.Point(6, 178);
-            this.timeHourNumericUpDown.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.timeHourNumericUpDown.Name = "timeHourNumericUpDown";
-            this.timeHourNumericUpDown.Size = new System.Drawing.Size(150, 31);
-            this.timeHourNumericUpDown.TabIndex = 7;
-            // 
-            // timeColon
-            // 
-            this.timeColon.AutoSize = true;
-            this.timeColon.Location = new System.Drawing.Point(160, 181);
-            this.timeColon.Name = "timeColon";
-            this.timeColon.Size = new System.Drawing.Size(18, 25);
-            this.timeColon.TabIndex = 8;
-            this.timeColon.Text = ":";
-            // 
-            // timeMinuteNumericUpDown
-            // 
-            this.timeMinuteNumericUpDown.Location = new System.Drawing.Point(180, 178);
-            this.timeMinuteNumericUpDown.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.timeMinuteNumericUpDown.Name = "timeMinuteNumericUpDown";
-            this.timeMinuteNumericUpDown.Size = new System.Drawing.Size(150, 31);
-            this.timeMinuteNumericUpDown.TabIndex = 9;
-            // 
-            // meetingWithComboBox
-            // 
-            this.meetingWithComboBox.FormattingEnabled = true;
-            this.meetingWithComboBox.Location = new System.Drawing.Point(6, 278);
-            this.meetingWithComboBox.Name = "meetingWithComboBox";
-            this.meetingWithComboBox.Size = new System.Drawing.Size(400, 33);
-            this.meetingWithComboBox.TabIndex = 10;
-            // 
-            // meetingAimButton
-            // 
-            this.meetingAimButton.Location = new System.Drawing.Point(6, 378);
-            this.meetingAimButton.Name = "meetingAimButton";
-            this.meetingAimButton.Size = new System.Drawing.Size(400, 77);
-            this.meetingAimButton.TabIndex = 11;
-            this.meetingAimButton.Text = "Meeting Aim";
-            this.meetingAimButton.UseVisualStyleBackColor = true;
-            // 
-            // visitorsOnSiteListBox
-            // 
-            this.visitorsOnSiteListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.visitorsOnSiteListBox.FormattingEnabled = true;
-            this.visitorsOnSiteListBox.ItemHeight = 25;
-            this.visitorsOnSiteListBox.Location = new System.Drawing.Point(3, 27);
-            this.visitorsOnSiteListBox.Name = "visitorsOnSiteListBox";
-            this.visitorsOnSiteListBox.Size = new System.Drawing.Size(450, 544);
-            this.visitorsOnSiteListBox.TabIndex = 0;
-            // 
-            // VisitorRegistrationWindow
+            // VisitorRegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,7 +350,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "VisitorRegistrationWindow";
+            this.Name = "VisitorRegistrationForm";
             this.Text = "Visitor Registration";
             this.panel1.ResumeLayout(false);
             this.visitorsOnSiteGroupBox.ResumeLayout(false);
@@ -355,8 +361,8 @@
             this.panel4.ResumeLayout(false);
             this.meetingDetailsGroupBox.ResumeLayout(false);
             this.meetingDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeMinuteNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }

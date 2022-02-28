@@ -16,7 +16,7 @@ namespace Charlie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VisitorRegistrationWindow());
+            Application.Run(new VisitorRegistrationForm());
         }
     }
 }
