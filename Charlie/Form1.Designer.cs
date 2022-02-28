@@ -44,17 +44,26 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.meetingDetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.timeLabel = new System.Windows.Forms.Label();
-            this.meetingWithLabel = new System.Windows.Forms.Label();
-            this.meetingAimLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.meetingAimLabel = new System.Windows.Forms.Label();
+            this.meetingWithLabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.timeHourNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.timeColon = new System.Windows.Forms.Label();
+            this.timeMinuteNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.meetingWithComboBox = new System.Windows.Forms.ComboBox();
+            this.meetingAimButton = new System.Windows.Forms.Button();
+            this.visitorsOnSiteListBox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
+            this.visitorsOnSiteGroupBox.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.visitorDetailsGroupBox.SuspendLayout();
             this.panel4.SuspendLayout();
             this.meetingDetailsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeMinuteNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +78,7 @@
             // 
             // visitorsOnSiteGroupBox
             // 
+            this.visitorsOnSiteGroupBox.Controls.Add(this.visitorsOnSiteListBox);
             this.visitorsOnSiteGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.visitorsOnSiteGroupBox.Location = new System.Drawing.Point(10, 10);
             this.visitorsOnSiteGroupBox.Name = "visitorsOnSiteGroupBox";
@@ -204,6 +214,11 @@
             // 
             // meetingDetailsGroupBox
             // 
+            this.meetingDetailsGroupBox.Controls.Add(this.meetingAimButton);
+            this.meetingDetailsGroupBox.Controls.Add(this.meetingWithComboBox);
+            this.meetingDetailsGroupBox.Controls.Add(this.timeMinuteNumericUpDown);
+            this.meetingDetailsGroupBox.Controls.Add(this.timeColon);
+            this.meetingDetailsGroupBox.Controls.Add(this.timeHourNumericUpDown);
             this.meetingDetailsGroupBox.Controls.Add(this.dateTimePicker1);
             this.meetingDetailsGroupBox.Controls.Add(this.meetingAimLabel);
             this.meetingDetailsGroupBox.Controls.Add(this.meetingWithLabel);
@@ -217,32 +232,12 @@
             this.meetingDetailsGroupBox.TabStop = false;
             this.meetingDetailsGroupBox.Text = "Meeting Details";
             // 
-            // dateLabel
+            // dateTimePicker1
             // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(6, 50);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(57, 25);
-            this.dateLabel.TabIndex = 2;
-            this.dateLabel.Text = "Date";
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(3, 150);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(59, 25);
-            this.timeLabel.TabIndex = 3;
-            this.timeLabel.Text = "Time";
-            // 
-            // meetingWithLabel
-            // 
-            this.meetingWithLabel.AutoSize = true;
-            this.meetingWithLabel.Location = new System.Drawing.Point(6, 250);
-            this.meetingWithLabel.Name = "meetingWithLabel";
-            this.meetingWithLabel.Size = new System.Drawing.Size(138, 25);
-            this.meetingWithLabel.TabIndex = 4;
-            this.meetingWithLabel.Text = "Meeting With";
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 78);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(400, 31);
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // meetingAimLabel
             // 
@@ -253,12 +248,92 @@
             this.meetingAimLabel.TabIndex = 5;
             this.meetingAimLabel.Text = "Meeting Aim";
             // 
-            // dateTimePicker1
+            // meetingWithLabel
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(8, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(400, 31);
-            this.dateTimePicker1.TabIndex = 6;
+            this.meetingWithLabel.AutoSize = true;
+            this.meetingWithLabel.Location = new System.Drawing.Point(6, 250);
+            this.meetingWithLabel.Name = "meetingWithLabel";
+            this.meetingWithLabel.Size = new System.Drawing.Size(138, 25);
+            this.meetingWithLabel.TabIndex = 4;
+            this.meetingWithLabel.Text = "Meeting With";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(3, 150);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(59, 25);
+            this.timeLabel.TabIndex = 3;
+            this.timeLabel.Text = "Time";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(6, 50);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(57, 25);
+            this.dateLabel.TabIndex = 2;
+            this.dateLabel.Text = "Date";
+            // 
+            // timeHourNumericUpDown
+            // 
+            this.timeHourNumericUpDown.Location = new System.Drawing.Point(6, 178);
+            this.timeHourNumericUpDown.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.timeHourNumericUpDown.Name = "timeHourNumericUpDown";
+            this.timeHourNumericUpDown.Size = new System.Drawing.Size(150, 31);
+            this.timeHourNumericUpDown.TabIndex = 7;
+            // 
+            // timeColon
+            // 
+            this.timeColon.AutoSize = true;
+            this.timeColon.Location = new System.Drawing.Point(160, 181);
+            this.timeColon.Name = "timeColon";
+            this.timeColon.Size = new System.Drawing.Size(18, 25);
+            this.timeColon.TabIndex = 8;
+            this.timeColon.Text = ":";
+            // 
+            // timeMinuteNumericUpDown
+            // 
+            this.timeMinuteNumericUpDown.Location = new System.Drawing.Point(180, 178);
+            this.timeMinuteNumericUpDown.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.timeMinuteNumericUpDown.Name = "timeMinuteNumericUpDown";
+            this.timeMinuteNumericUpDown.Size = new System.Drawing.Size(150, 31);
+            this.timeMinuteNumericUpDown.TabIndex = 9;
+            // 
+            // meetingWithComboBox
+            // 
+            this.meetingWithComboBox.FormattingEnabled = true;
+            this.meetingWithComboBox.Location = new System.Drawing.Point(6, 278);
+            this.meetingWithComboBox.Name = "meetingWithComboBox";
+            this.meetingWithComboBox.Size = new System.Drawing.Size(400, 33);
+            this.meetingWithComboBox.TabIndex = 10;
+            // 
+            // meetingAimButton
+            // 
+            this.meetingAimButton.Location = new System.Drawing.Point(6, 378);
+            this.meetingAimButton.Name = "meetingAimButton";
+            this.meetingAimButton.Size = new System.Drawing.Size(400, 77);
+            this.meetingAimButton.TabIndex = 11;
+            this.meetingAimButton.Text = "Meeting Aim";
+            this.meetingAimButton.UseVisualStyleBackColor = true;
+            // 
+            // visitorsOnSiteListBox
+            // 
+            this.visitorsOnSiteListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visitorsOnSiteListBox.FormattingEnabled = true;
+            this.visitorsOnSiteListBox.ItemHeight = 25;
+            this.visitorsOnSiteListBox.Location = new System.Drawing.Point(3, 27);
+            this.visitorsOnSiteListBox.Name = "visitorsOnSiteListBox";
+            this.visitorsOnSiteListBox.Size = new System.Drawing.Size(450, 544);
+            this.visitorsOnSiteListBox.TabIndex = 0;
             // 
             // VisitorRegistrationWindow
             // 
@@ -272,6 +347,7 @@
             this.Name = "VisitorRegistrationWindow";
             this.Text = "Visitor Registration";
             this.panel1.ResumeLayout(false);
+            this.visitorsOnSiteGroupBox.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.visitorDetailsGroupBox.ResumeLayout(false);
@@ -279,6 +355,8 @@
             this.panel4.ResumeLayout(false);
             this.meetingDetailsGroupBox.ResumeLayout(false);
             this.meetingDetailsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeHourNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeMinuteNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,6 +384,12 @@
         private System.Windows.Forms.Label meetingWithLabel;
         private System.Windows.Forms.Label meetingAimLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.NumericUpDown timeHourNumericUpDown;
+        private System.Windows.Forms.Label timeColon;
+        private System.Windows.Forms.NumericUpDown timeMinuteNumericUpDown;
+        private System.Windows.Forms.ComboBox meetingWithComboBox;
+        private System.Windows.Forms.Button meetingAimButton;
+        private System.Windows.Forms.ListBox visitorsOnSiteListBox;
     }
 }
 
