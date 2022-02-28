@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Charlie
 {
@@ -48,6 +49,19 @@ namespace Charlie
             form.Show();
         }
 
+        void ClearForm()
+        {
+            nameTextBox.Text = "";
+            surnameTextBox.Text = "";
+            mobileTextBox.Text = "";
+            emailTextBox.Text = "";
+            dateTimePicker.Value = DateTime.Now;
+            timeHourNumericUpDown.Value = 0;
+            timeMinuteNumericUpDown.Value = 0;
+            meetingWithComboBox.SelectedItem = null;
+            meetingAimButton.Text = "Meeting Aim";
+        }
+
         private void signInButton_Click(object sender, EventArgs e)
         {
             // Check that the user has entered valid data.
@@ -83,12 +97,37 @@ namespace Charlie
                 MessageBox.Show("Please enter a valid mobile number.");
                 return;
             }
+            // Check email address is valid
+            Regex email_regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (!email_regex.Match(emailTextBox.Text).Success)
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                return;
+            }
             // Add visitor to on site list box.
             visitorsOnSiteListBox.Items.Add("Meeting of: " + nameTextBox.Text + " " + surnameTextBox.Text);
-            visitorsOnSiteListBox.Items.Add("Meeting at: " + timeHourNumericUpDown.Value + ":" + timeMinuteNumericUpDown.Value);
+            visitorsOnSiteListBox.Items.Add("Meeting at: " + timeHourNumericUpDown.Value + ":" + timeMinuteNumericUpDown.Value + ". " + dateTimePicker.Text + ".");
             visitorsOnSiteListBox.Items.Add("Meeting with: " + meetingWithComboBox.SelectedItem);
             visitorsOnSiteListBox.Items.Add("Meeting aim: " + meetingAimButton.Text);
+            visitorsOnSiteListBox.Items.Add("Mobile: " + mobileTextBox.Text + ". Email: " + emailTextBox.Text + ".");
             visitorsOnSiteListBox.Items.Add("-------------------------------------------");
+            // Clear the form.
+            ClearForm();
+        }
+
+        private void visitorsOnSiteListBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar) == 8)
+            {
+                int selected = visitorsOnSiteListBox.SelectedIndex;
+                for (int x = 0; x < 6; x++)
+                {
+                    if (visitorsOnSiteListBox.Items.Count > 0)
+                    {
+                        visitorsOnSiteListBox.Items.RemoveAt(selected / 6);
+                    }
+                }
+            }
         }
     }
 }

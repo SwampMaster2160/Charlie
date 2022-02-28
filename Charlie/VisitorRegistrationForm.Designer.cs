@@ -50,7 +50,7 @@
             this.timeMinuteNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.timeColon = new System.Windows.Forms.Label();
             this.timeHourNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.meetingAimLabel = new System.Windows.Forms.Label();
             this.meetingWithLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
@@ -96,6 +96,7 @@
             this.visitorsOnSiteListBox.Name = "visitorsOnSiteListBox";
             this.visitorsOnSiteListBox.Size = new System.Drawing.Size(450, 544);
             this.visitorsOnSiteListBox.TabIndex = 0;
+            this.visitorsOnSiteListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.visitorsOnSiteListBox_KeyPress);
             // 
             // panel2
             // 
@@ -230,7 +231,7 @@
             this.meetingDetailsGroupBox.Controls.Add(this.timeMinuteNumericUpDown);
             this.meetingDetailsGroupBox.Controls.Add(this.timeColon);
             this.meetingDetailsGroupBox.Controls.Add(this.timeHourNumericUpDown);
-            this.meetingDetailsGroupBox.Controls.Add(this.dateTimePicker1);
+            this.meetingDetailsGroupBox.Controls.Add(this.dateTimePicker);
             this.meetingDetailsGroupBox.Controls.Add(this.meetingAimLabel);
             this.meetingDetailsGroupBox.Controls.Add(this.meetingWithLabel);
             this.meetingDetailsGroupBox.Controls.Add(this.timeLabel);
@@ -298,12 +299,12 @@
             this.timeHourNumericUpDown.Size = new System.Drawing.Size(150, 31);
             this.timeHourNumericUpDown.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(400, 31);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker.Location = new System.Drawing.Point(6, 78);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(400, 31);
+            this.dateTimePicker.TabIndex = 6;
             // 
             // meetingAimLabel
             // 
@@ -389,7 +390,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label meetingWithLabel;
         private System.Windows.Forms.Label meetingAimLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.NumericUpDown timeHourNumericUpDown;
         private System.Windows.Forms.Label timeColon;
         private System.Windows.Forms.NumericUpDown timeMinuteNumericUpDown;
