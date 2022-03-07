@@ -115,9 +115,9 @@ namespace Charlie
             ClearForm();
         }
 
-        private void visitorsOnSiteListBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void visitorsOnSiteListBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if ((e.KeyChar) == 8)
+            if ((e.KeyValue) == 46)
             {
                 int selected = visitorsOnSiteListBox.SelectedIndex;
                 for (int x = 0; x < 6; x++)

@@ -96,7 +96,7 @@
             this.visitorsOnSiteListBox.Name = "visitorsOnSiteListBox";
             this.visitorsOnSiteListBox.Size = new System.Drawing.Size(450, 544);
             this.visitorsOnSiteListBox.TabIndex = 0;
-            this.visitorsOnSiteListBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.visitorsOnSiteListBox_KeyPress);
+            this.visitorsOnSiteListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.visitorsOnSiteListBox_KeyDown);
             // 
             // panel2
             // 
