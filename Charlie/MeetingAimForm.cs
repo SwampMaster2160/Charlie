@@ -12,6 +12,8 @@ namespace Charlie
 {
     public partial class MeetingAimForm : Form
     {
+        public String Aim = "";
+
         public MeetingAimForm()
         {
             InitializeComponent();
@@ -19,17 +21,17 @@ namespace Charlie
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            string aim = "";
-            if (meetingRadioButton.Checked) aim = "Meeting";
-            else if (salesAppointmentRadioButton.Checked) aim = "Sales Appointment";
-            else if (siteVisitRadioButton.Checked) aim = "Site Visit";
-            else if (studentInterviewRadioButton.Checked) aim = "Student Interview";
-            ParentForm.Aim = aim;
+            if (meetingRadioButton.Checked) Aim = "Meeting";
+            else if (salesAppointmentRadioButton.Checked) Aim = "Sales Appointment";
+            else if (siteVisitRadioButton.Checked) Aim = "Site Visit";
+            else if (studentInterviewRadioButton.Checked) Aim = "Student Interview";
+            DialogResult = DialogResult.OK;
             Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

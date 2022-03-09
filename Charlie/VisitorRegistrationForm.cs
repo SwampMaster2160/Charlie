@@ -13,14 +13,6 @@ namespace Charlie
 {
     public partial class VisitorRegistrationForm : Form
     {
-        public string Aim
-        {
-            set
-            {
-                meetingAimButton.Text = value;
-            }
-        }
-
         public VisitorRegistrationForm()
         {
             InitializeComponent();
@@ -45,8 +37,7 @@ namespace Charlie
         {
             // Open the meeting aim window
             MeetingAimForm form = new MeetingAimForm();
-            form.ParentForm = this;
-            form.Show();
+            if (form.ShowDialog() == DialogResult.OK) meetingAimButton.Text = form.Aim;
         }
 
         void ClearForm()
@@ -80,7 +71,7 @@ namespace Charlie
                 MessageBox.Show("Please enter a email address.");
                 return;
             }
-            if (meetingWithComboBox.SelectedItem == null)
+            if (meetingWithComboBox.SelectedItem == null || !meetingWithComboBox.Items.Contains(meetingWithComboBox.SelectedItem))
             {
                 MessageBox.Show("Please select who you will meet with.");
                 return;
@@ -92,7 +83,8 @@ namespace Charlie
             }
             // Check phone number is valid
             UInt64 dummy;
-            if (!UInt64.TryParse(mobileTextBox.Text, out dummy))
+            int length = mobileTextBox.Text.Count();
+            if (!UInt64.TryParse(mobileTextBox.Text, out dummy) || length < 8 || 16 < length)
             {
                 MessageBox.Show("Please enter a valid mobile number.");
                 return;

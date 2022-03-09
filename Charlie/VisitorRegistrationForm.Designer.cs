@@ -395,8 +395,8 @@
         private System.Windows.Forms.Label timeColon;
         private System.Windows.Forms.NumericUpDown timeMinuteNumericUpDown;
         private System.Windows.Forms.ComboBox meetingWithComboBox;
-        private System.Windows.Forms.Button meetingAimButton;
         private System.Windows.Forms.ListBox visitorsOnSiteListBox;
+        private System.Windows.Forms.Button meetingAimButton;
     }
 }
 
